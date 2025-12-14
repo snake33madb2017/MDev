@@ -1,0 +1,140 @@
+/* --- MARCO DAZA CUSTOM THEME: TERMINAL MODE (B&W) --- */
+
+/* 1. TIPOGRAFÍA GLOBAL */
+/* Párrafos y textos generales: Consolas */
+body,
+p,
+span,
+li,
+a,
+div {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+}
+
+/* TÍTULOS: IBM Plex Mono */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.st-hero-text h1,
+.st-section-heading-title {
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-weight: 700 !important;
+    letter-spacing: -1px;
+}
+
+/* 2. BASE DE COLORES (Negro Puro y Matices de Gris) */
+body,
+html {
+    background-color: #000000 !important;
+    color: #b0b0b0 !important;
+    /* Gris suave para texto general */
+}
+
+/* Forzar fondos negros */
+section,
+header,
+footer,
+.st-dark-bg,
+.st-gray-bg,
+.st-site-header,
+.st-sticky-active,
+.st-iconbox,
+.st-portfolio-single {
+    background-color: #000000 !important;
+    background-image: none !important;
+}
+
+/* COLORES DE TEXTO REFINADOS */
+/* Títulos: Blanco casi puro (pero no #fff nuclear) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #e6e6e6 !important;
+}
+
+/* Párrafos: Gris técnico */
+p,
+li,
+.st-text-block-text {
+    color: #a0a0a0 !important;
+}
+
+/* Enlaces y acentos: Blanco brillante para destacar */
+a,
+.st-nav-list a {
+    color: #cccccc !important;
+}
+
+a:hover,
+.st-nav-list a.active {
+    color: #ffffff !important;
+}
+
+/* 3. ELEMENTOS DE ACENTO */
+.st-social-btn,
+.st-iconbox-icon i,
+.fab,
+.fas,
+.fa-wordpress-simple,
+.fa-server,
+.fa-code {
+    color: #e6e6e6 !important;
+}
+
+/* 4. BOTONES ESTILO TERMINAL */
+.st-btn {
+    background-color: #000000 !important;
+    color: #e6e6e6 !important;
+    border: 1px solid #666666 !important;
+    /* Borde más sutil */
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace !important;
+    /* Fuente técnica en botones */
+}
+
+.st-btn:hover {
+    background-color: #e6e6e6 !important;
+    color: #000000 !important;
+    border-color: #e6e6e6 !important;
+}
+
+/* 5. TARJETAS Y BORDES */
+.st-iconbox,
+.st-portfolio-single,
+.st-resume-timeline,
+.st-skill-wrap,
+.service-box {
+    border: 1px solid #222222 !important;
+    /* Borde muy oscuro, apenas visible */
+}
+
+.st-iconbox:hover {
+    border-color: #666666 !important;
+    /* Resalta al hover */
+}
+
+/* 6. IMÁGENES */
+img {
+    filter: grayscale(100%) contrast(1.1) brightness(0.9) !important;
+    /* Un poco más oscuras para que no deslumbren */
+    transition: filter 0.3s;
+}
+
+img:hover {
+    filter: grayscale(0%) brightness(1) !important;
+}
+
+/* 7. NAVEGACIÓN */
+.st-nav .st-nav-list>li>a.active {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border-bottom: 2px solid #ffffff;
+    /* Subrayado técnico */
+}

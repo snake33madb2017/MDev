@@ -1,122 +1,577 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="no-js" lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Web CV | Desarrollador</title>
+    <!-- Meta Tags SEO -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Marco Daza Bautista">
+    <meta name="description"
+        content="Desarrollador Web experto en WordPress, optimización de rendimiento (WPO) y seguridad. Consultor TI con experiencia en servidores, PHP y bases de datos. Servicios en Galicia y remoto.">
+    <meta name="keywords"
+        content="Desarrollador WordPress, WebMaster Galicia, Experto Elementor, Seguridad WordPress, Programador PHP, Consultor TI, Pontevedra, Diseño Web">
 
-    <!-- Google Fonts: Outfit -->
+    <!-- Page Title -->
+    <title>Marco Daza | Experto WordPress & WebMaster</title>
+
+    <!-- Google Fonts: IBM Plex Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Favicon Icon -->
+    <link rel="icon" href="assets/img/favicon.png" />
 
-    <!-- Iconos (Boxicons) -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/slick.css" />
+    <link rel="stylesheet" href="assets/css/lightgallery.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
 </head>
 
-<body>
-
-    <!-- Navegación -->
-    <nav class="navbar">
-        <div class="logo">MiPortafolio</div>
-        <ul class="nav-links">
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#about">Sobre mí</a></li>
-            <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#projects">Proyectos</a></li>
-            <li><a href="#contact">Contacto</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </nav>
-
-    <!-- Hero Section (Portada) -->
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <span class="greeting">Hola, soy</span>
-            <h1 class="name">Marco Antonio Daza</h1>
-            <h2 class="role">Desarrollador Web Creativo</h2>
-            <p class="description">
-                Transformo ideas en experiencias digitales asombrosas.
-                Aprendiendo y construyendo el futuro de la web paso a paso.
-            </p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
-                <a href="#contact" class="btn btn-outline">Contáctame</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <!-- Placeholder para tu foto -->
-            <div class="img-placeholder">
-                <i class='bx bxs-user'></i>
+<body id="home">
+    <!-- Start Header Section -->
+    <header class="st-site-header st-style1 st-sticky-header">
+        <div class="st-main-header">
+            <div class="container">
+                <div class="st-main-header-in">
+                    <div class="st-main-header-left">
+                        <a class="st-site-branding" href="index.html"
+                            style="font-size: 24px; color: white; font-weight: bold; text-decoration: none;">
+                            MARCO<span style="color: #FFD200;"> DAZA</span>
+                        </a>
+                    </div>
+                    <div class="st-main-header-right">
+                        <div class="st-nav">
+                            <ul class="st-nav-list st-onepage-nav">
+                                <li><a href="#home" class="st-smooth-move">Inicio</a></li>
+                                <li><a href="#about" class="st-smooth-move">Perfil</a></li>
+                                <li><a href="#services" class="st-smooth-move">Servicios</a></li>
+                                <li><a href="#resume" class="st-smooth-move">Trayectoria</a></li>
+                                <li><a href="#portfolio" class="st-smooth-move">Proyectos</a></li>
+                                <li><a href="#contact" class="st-smooth-move">Contacto</a></li>
+                            </ul>
+                            <div class="sp-phone">
+                                <svg viewBox="0 0 513.64 513.64">
+                                    <path
+                                        d="M499.66,376.96l-71.68-71.68c-25.6-25.6-69.12-15.359-79.36,17.92c-7.68,23.041-33.28,35.841-56.32,30.72c-51.2-12.8-120.32-79.36-133.12-133.12c-7.68-23.041,7.68-48.641,30.72-56.32c33.28-10.24,43.52-53.76,17.92-79.36l-71.68-71.68c-20.48-17.92-51.2-17.92-69.12,0l-48.64,48.64c-48.64,51.2,5.12,186.88,125.44,307.2c120.32,120.32,256,176.641,307.2,125.44l48.64-48.64C517.581,425.6,517.581,394.88,499.66,376.96z" />
+                                </svg>
+                                <div class="sp-phone-no">+34 678 14 69 56</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
+    <!-- End Header Section -->
 
-    <!-- Sobre Mí -->
-    <section id="about" class="section">
-        <h2 class="section-title">Sobre Mí</h2>
-        <div class="about-container">
-            <div class="about-text">
-                <p>
-                    Soy un apasionado por la tecnología y el diseño. Actualmente estoy construyendo mi camino
-                    como desarrollador web, enfocándome en crear interfaces limpias, modernas y funcionales.
-                    Me encanta aprender nuevas tecnologías y mejorar mis habilidades cada día.
-                </p>
-                <div class="stats">
-                    <div class="stat-item">
-                        <span class="number">1+</span>
-                        <span class="label">Años Aprendiendo</span>
+    <!-- Start Hero Seciton -->
+    <div class="st-height-b80 st-height-lg-b80"></div>
+    <section class="st-hero-wrap st-parallax">
+        <div class="st-hero st-style1 st-ripple-version">
+            <div class="container">
+                <div class="st-hero-text">
+                    <h3>Hola, soy</h3>
+                    <h1>Marco Daza<br>Bautista</h1>
+                    <h2>WebMaster & Experto WordPress</h2>
+                    <div class="st-hero-btn">
+                        <a href="#contact" class="st-btn st-style1 st-color1 st-smooth-move">Contactar Ahora</a>
                     </div>
-                    <div class="stat-item">
-                        <span class="number">5+</span>
-                        <span class="label">Proyectos Pequeños</span>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Image -->
+        <div class="st-hero-img st-to-right">
+            <img class="wow fadeInRight" src="assets/img/section/hero-img.jpg" alt="Marco Daza">
+            <div class="st-social-group wow fadeInLeft">
+                <div class="st-social-link">
+                    <a href="#" class="st-social-btn active"><span class="st-social-icon"><i
+                                class="fab fa-linkedin"></i></span></a>
+                    <a href="#" class="st-social-btn"><span class="st-social-icon"><i
+                                class="fab fa-github"></i></span></a>
+                    <a href="mailto:Snake33madb@gmail.com" class="st-social-btn"><span class="st-social-icon"><i
+                                class="fas fa-envelope"></i></span></a>
+                </div>
+            </div>
+        </div>
+        <div id="particles-js"></div>
+    </section>
+    <!-- End Hero Seciton -->
+
+    <!-- Start About Seciton -->
+    <section id="about" class="st-about-wrap">
+        <div class="st-height-b100 st-height-lg-b80"></div>
+        <div class="container">
+            <div class="st-section-heading st-style1">
+                <h4 class="st-section-heading-title">PERFIL</h4>
+                <h2 class="st-section-heading-subtitle">PERFIL</h2>
+            </div>
+            <div class="st-height-b25 st-height-lg-b25"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 wow fadeInLeft">
+                    <div class="st-about-img-wrap">
+                        <div class="st-about-img st-dynamic-bg st-bg" data-src="assets/img/section/about.jpg"></div>
+                    </div>
+                    <div class="st-height-b0 st-height-lg-b30"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="st-vertical-middle">
+                        <div class="st-vertical-middle-in">
+                            <div class="st-text-block st-style1">
+                                <h2 class="st-text-block-title">Ingeniero de Sistemas & WebMaster</h2>
+                                <h4 class="st-text-block-subtitle">Especialista en Alto Rendimiento Web</h4>
+                                <div class="st-text-block-text">
+                                    <p>
+                                        Soy Desarrollador de WordPress experto en la creación de temas y plugins
+                                        personalizados, con un fuerte enfoque en
+                                        la <strong>optimización de rendimiento (WPO)</strong> y la seguridad web.
+                                        <br><br>
+                                        Combino mi experiencia en desarrollo (PHP, HTML, CSS, JS) con sólidos
+                                        conocimientos en administración de servidores e infraestructura
+                                        (DevOps, IBM Tivoli, Linux), lo que me permite gestionar proyectos complejos
+                                        garantizando excelencia técnica y entregas puntuales.
+                                    </p>
+                                </div>
+                                <ul class="st-text-block-details st-mp0">
+                                    <li><span>Teléfono</span> : <span>+34 678 14 69 56</span></li>
+                                    <li><span>Email</span> : <span>Snake33madb@gmail.com</span></li>
+                                    <li><span>Ubicación</span> : <span>Pontevedra, Galicia</span></li>
+                                    <li><span>Freelance</span> : <span>Disponible</span></li>
+                                </ul>
+                                <div class="st-text-block-btn">
+                                    <a href="#contact" class="st-btn st-style1 st-color1">Solicitar Presupuesto</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Habilidades -->
-    <section id="skills" class="section alt-bg">
-        <h2 class="section-title">Mis Habilidades</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class='bx bxl-html5 skill-icon html'></i>
-                <h3>HTML5</h3>
-                <p>Estructura semántica y accesible.</p>
+    <!-- Start Service Seciton -->
+    <section id="services">
+        <div class="st-height-b100 st-height-lg-b80"></div>
+        <div class="container">
+            <div class="st-section-heading st-style1">
+                <h4 class="st-section-heading-title">LO QUE HAGO</h4>
+                <h2 class="st-section-heading-subtitle">SERVICIOS</h2>
             </div>
-            <div class="skill-card">
-                <i class='bx bxl-css3 skill-icon css'></i>
-                <h3>CSS3</h3>
-                <p>Diseño responsivo, Flexbox y Grid.</p>
-            </div>
-            <div class="skill-card">
-                <i class='bx bxl-javascript skill-icon js'></i>
-                <h3>JavaScript</h3>
-                <p>Interactividad y lógica dinámica.</p>
+            <div class="st-height-b25 st-height-lg-b25"></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="st-iconbox st-style1">
+                        <div class="st-iconbox-icon"><i class="fab fa-wordpress-simple"
+                                style="font-size: 40px; color: #FFD200;"></i></div>
+                        <h2 class="st-iconbox-title">WordPress Avanzado</h2>
+                        <div class="st-iconbox-text">
+                            Desarrollo de temas y plugins a medida. Dominio de Elementor Pro, Divi y WPBakery.
+                            Integraciones complejas y tiendas online (WooCommerce/Prestashop).
+                        </div>
+                    </div>
+                    <div class="st-height-b30 st-height-lg-b30"></div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="st-iconbox st-style1">
+                        <div class="st-iconbox-icon"><i class="fas fa-server"
+                                style="font-size: 40px; color: #FFD200;"></i></div>
+                        <h2 class="st-iconbox-title">WebMaster & DevOps</h2>
+                        <div class="st-iconbox-text">
+                            Administración de servidores (CPanel, WHM), gestión de dominios y seguridad. Optimización
+                            WPO para cargas rápidas y auditorías técnicas.
+                        </div>
+                    </div>
+                    <div class="st-height-b30 st-height-lg-b30"></div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="st-iconbox st-style1">
+                        <div class="st-iconbox-icon"><i class="fas fa-code"
+                                style="font-size: 40px; color: #FFD200;"></i></div>
+                        <h2 class="st-iconbox-title">Desarrollo a Medida</h2>
+                        <div class="st-iconbox-text">
+                            Programación en PHP, HTML5, CSS3 y JavaScript. Conexión con bases de datos MySQL y
+                            desarrollo de portales web escalables (Strapi/Headless).
+                        </div>
+                    </div>
+                    <div class="st-height-b30 st-height-lg-b30"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Start Skill Seciton -->
+    <section class="st-dark-bg">
+        <div class="st-height-b100 st-height-lg-b80"></div>
+        <div class="container">
+            <div class="st-section-heading st-style1">
+                <h4 class="st-section-heading-title">COMPETENCIAS</h4>
+                <h2 class="st-section-heading-subtitle">SKILLS</h2>
+            </div>
+            <div class="st-height-b25 st-height-lg-b25"></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="st-skill-wrap">
+                        <div class="st-skill-heading">
+                            <h2 class="st-skill-title">Excelencia técnica y estratégica.</h2>
+                            <div class="st-skill-subtitle">
+                                Mi perfil combina la creatividad del desarrollo frontend con la robustez de la
+                                administración de sistemas.
+                                Garantizo webs que no solo se ven bien, sino que funcionan rápido y son seguras.
+                            </div>
+                            <br>
+                            <ul style="color:#a0a0b0; list-style: disc; margin-left: 20px;">
+                                <li>Gestión efectiva de proyectos</li>
+                                <li>Comunicación clara y resolución de problemas</li>
+                                <li>Compromiso con la puntualidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="st-height-b0 st-height-lg-b30"></div>
+                    <div class="st-progressbar-wrap">
+                        <div class="st-single-progressbar">
+                            <div class="st-progressbar-heading">
+                                <h3 class="st-progressbar-title">WordPress & CMS (Elementor/Divi/Strapi)</h3>
+                                <div class="st-progressbar-percentage wow fadeInLeft" data-wow-duration="1.5s"
+                                    data-wow-delay="0.5s">95%</div>
+                            </div>
+                            <div class="st-progressbar" data-progress="95">
+                                <div class="st-progressbar-in wow fadeInLeft"></div>
+                            </div>
+                        </div>
+                        <div class="st-height-b30 st-height-lg-b20"></div>
+
+                        <div class="st-single-progressbar">
+                            <div class="st-progressbar-heading">
+                                <h3 class="st-progressbar-title">PHP / MySQL / Backend Security</h3>
+                                <div class="st-progressbar-percentage wow fadeInLeft" data-wow-duration="1.5s"
+                                    data-wow-delay="0.5s">90%</div>
+                            </div>
+                            <div class="st-progressbar" data-progress="90">
+                                <div class="st-progressbar-in wow fadeInLeft"></div>
+                            </div>
+                        </div>
+                        <div class="st-height-b30 st-height-lg-b20"></div>
+
+                        <div class="st-single-progressbar">
+                            <div class="st-progressbar-heading">
+                                <h3 class="st-progressbar-title">Frontend (HTML/CSS/JS/Responsive)</h3>
+                                <div class="st-progressbar-percentage wow fadeInLeft" data-wow-duration="1.5s"
+                                    data-wow-delay="0.5s">85%</div>
+                            </div>
+                            <div class="st-progressbar" data-progress="85">
+                                <div class="st-progressbar-in wow fadeInLeft"></div>
+                            </div>
+                        </div>
+                        <div class="st-height-b30 st-height-lg-b20"></div>
+
+                        <div class="st-single-progressbar">
+                            <div class="st-progressbar-heading">
+                                <h3 class="st-progressbar-title">Sistemas & DevOps (Linux/CPanel)</h3>
+                                <div class="st-progressbar-percentage wow fadeInLeft" data-wow-duration="1.5s"
+                                    data-wow-delay="0.5s">80%</div>
+                            </div>
+                            <div class="st-progressbar" data-progress="80">
+                                <div class="st-progressbar-in wow fadeInLeft"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Resume Seciton -->
+    <section id="resume" class="st-dark-bg">
+        <div class="st-height-b100 st-height-lg-b80"></div>
+        <div class="container">
+            <div class="st-section-heading st-style1">
+                <h4 class="st-section-heading-title">RESUMEN</h4>
+                <h2 class="st-section-heading-subtitle">TRAYECTORIA</h2>
+            </div>
+            <div class="st-height-b25 st-height-lg-b25"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <!-- Experiencia -->
+                <div class="col-lg-6">
+                    <div class="st-resume-wrap">
+                        <div class="st-resume-heading">
+                            <img src="assets/img/icon/resume-icon1.png" alt="icon">
+                            <h2 class="st-resume-heading-title">Experiencia Laboral</h2>
+                        </div>
+                        <div class="st-height-b50 st-height-lg-b30"></div>
+
+                        <div class="st-resume-timeline-wrap">
+                            <div class="st-resume-timeline">
+                                <h3 class="st-resume-timeline-title">Desarrollador Web Freelance</h3>
+                                <div class="st-resume-timeline-duration">2023 - Presente</div>
+                                <h4 class="st-resume-timeline-subtitle">Diseños y Webos</h4>
+                                <div class="st-resume-timeline-text">
+                                    <p>Implementación de portales web con estándares de accesibilidad (Informe IRA) para
+                                        el programa Kit Digital.</p>
+                                </div>
+                            </div>
+
+                            <div class="st-height-b50 st-height-lg-b30"></div>
+
+                            <div class="st-resume-timeline">
+                                <h3 class="st-resume-timeline-title">WebMaster</h3>
+                                <div class="st-resume-timeline-duration">2022</div>
+                                <h4 class="st-resume-timeline-subtitle">Consorcio Circulemos Digital</h4>
+                                <div class="st-resume-timeline-text">
+                                    <p>Desarrollo web utilizando Strapi (Headless CMS) para el portal <a
+                                            href="https://www.ventanillamovilidad.com.co/" target="_blank">Ventanilla
+                                            Movilidad</a>.</p>
+                                </div>
+                            </div>
+
+                            <div class="st-height-b50 st-height-lg-b30"></div>
+
+                            <div class="st-resume-timeline">
+                                <h3 class="st-resume-timeline-title">Administrador CMS</h3>
+                                <div class="st-resume-timeline-duration">2019 - 2022</div>
+                                <h4 class="st-resume-timeline-subtitle">Procolombia (BRM) & Ministerio de Transporte
+                                </h4>
+                                <div class="st-resume-timeline-text">
+                                    <p>Gestión técnica de portales gubernamentales de alto tráfico
+                                        (mintransporte.gov.co, procolombia.co). Mantenimiento y desarrollo.</p>
+                                </div>
+                            </div>
+
+                            <div class="st-height-b50 st-height-lg-b30"></div>
+
+                            <div class="st-resume-timeline">
+                                <h3 class="st-resume-timeline-title">WebMaster - DevOps</h3>
+                                <div class="st-resume-timeline-duration">2021</div>
+                                <h4 class="st-resume-timeline-subtitle">Sense Digital SAS</h4>
+                                <div class="st-resume-timeline-text">
+                                    <p>Manejo integral de servidores: Wordpress, Cpanel, WHM y Softacullous.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educación y Consultoría -->
+                <div class="col-lg-6">
+                    <div class="st-height-b0 st-height-lg-b50"></div>
+                    <div class="st-resume-wrap">
+                        <div class="st-resume-heading">
+                            <img src="assets/img/icon/resume-icon2.png" alt="icon">
+                            <h2 class="st-resume-heading-title">Educación & Formación TI</h2>
+                        </div>
+                        <div class="st-height-b50 st-height-lg-b30"></div>
+
+                        <div class="st-resume-timeline-wrap">
+                            <div class="st-resume-timeline">
+                                <h3 class="st-resume-timeline-title">Ingeniero de Sistemas</h3>
+                                <div class="st-resume-timeline-duration">Graduado</div>
+                                <h4 class="st-resume-timeline-subtitle">Universidad San Martin (Bogotá)</h4>
+                            </div>
+
+                            <div class="st-height-b50 st-height-lg-b30"></div>
+
+                            <div class="st-resume-timeline">
+                                <h3 class="st-resume-timeline-title">Certificaciones IBM & Sistemas</h3>
+                                <div class="st-resume-timeline-duration">2014 - 2015</div>
+                                <h4 class="st-resume-timeline-subtitle">Especialización Técnica</h4>
+                                <div class="st-resume-timeline-text">
+                                    <p>
+                                        • Especialista IBM AIX 6 System Administration.<br>
+                                        • IBM Tivoli Storage Manager (Implementación y Admin).<br>
+                                        • Técnico en mantenimiento de equipos (SENA).
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="st-height-b50 st-height-lg-b30"></div>
+
+                            <div class="st-resume-timeline">
+                                <h3 class="st-resume-timeline-title">Experiencia Previa en Consultoría TI</h3>
+                                <div class="st-resume-timeline-duration">2014 - 2015</div>
+                                <h4 class="st-resume-timeline-subtitle">Consultor TI (Varios Clientes)</h4>
+                                <div class="st-resume-timeline-text">
+                                    <p>Implementación de infraestructura crítica (Tivoli Storage, End Point Manager)
+                                        para banca y gobierno (Banco de Bogotá, Policía Nacional, GNB Sudameris).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Portfolio/Projects Seciton -->
+    <section id="portfolio">
+        <div class="st-height-b100 st-height-lg-b80"></div>
+        <div class="container">
+            <div class="st-section-heading st-style1">
+                <h4 class="st-section-heading-title">PORTFOLIO</h4>
+                <h2 class="st-section-heading-subtitle">PROYECTOS</h2>
+            </div>
+            <div class="st-height-b25 st-height-lg-b25"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <!-- Placeholder Project 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="st-portfolio-single st-style1 st-lightgallery">
+                        <div class="st-portfolio-item">
+                            <!-- Reemplazar HREF y SRC con tus imagenes reales -->
+                            <a href="assets/img/portfolio/portfolio1_lg.jpg"
+                                class="st-portfolio st-zoom st-lightbox-item">
+                                <div class="st-portfolio-img st-zoom-in">
+                                    <img src="assets/img/portfolio/portfolio1.jpg" alt="Ventanilla Movilidad">
+                                </div>
+                                <div class="st-portfolio-item-hover">
+                                    <i class="fas fa-link"></i>
+                                    <h5>Ventanilla Movilidad</h5>
+                                    <p>Desarrollo Portal Web</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder Project 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="st-portfolio-single st-style1 st-lightgallery">
+                        <div class="st-portfolio-item">
+                            <a href="assets/img/portfolio/portfolio2_lg.jpg"
+                                class="st-portfolio st-zoom st-lightbox-item">
+                                <div class="st-portfolio-img st-zoom-in">
+                                    <img src="assets/img/portfolio/portfolio2.jpg" alt="Procolombia">
+                                </div>
+                                <div class="st-portfolio-item-hover">
+                                    <i class="fas fa-link"></i>
+                                    <h5>Portal Procolombia</h5>
+                                    <p>Administración CMS</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder Project 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="st-portfolio-single st-style1 st-lightgallery">
+                        <div class="st-portfolio-item">
+                            <a href="assets/img/portfolio/portfolio3_lg.jpg"
+                                class="st-portfolio st-zoom st-lightbox-item">
+                                <div class="st-portfolio-img st-zoom-in">
+                                    <img src="assets/img/portfolio/portfolio3.jpg" alt="MinTransporte">
+                                </div>
+                                <div class="st-portfolio-item-hover">
+                                    <i class="fas fa-link"></i>
+                                    <h5>MinTransporte Gov</h5>
+                                    <p>WebMaster & Soporte</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="st-height-b100 st-height-lg-b80"></div>
+    </section>
+
+    <!-- Start Contact Seciton -->
+    <section id="contact" class="st-dark-bg">
+        <div class="st-height-b100 st-height-lg-b80"></div>
+        <div class="container">
+            <div class="st-section-heading st-style1">
+                <h4 class="st-section-heading-title">HABLEMOS</h4>
+                <h2 class="st-section-heading-subtitle">CONTACTO</h2>
+            </div>
+            <div class="st-height-b25 st-height-lg-b25"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="st-contact-title">¿Tienes un proyecto en mente?</h3>
+                    <div class="st-contact-text">
+                        Estoy disponible para nuevos retos profesionales, colaboraciones o consultorías técnicas.
+                        Contáctame para ver cómo puedo ayudarte a potenciar tu presencia digital.
+                    </div>
+                    <div class="st-contact-info-wrap">
+                        <div class="st-single-contact-info">
+                            <div class="st-single-contact-info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="st-single-contact-info-body">
+                                <h4 class="st-single-contact-info-title">Email</h4>
+                                <a href="mailto:Snake33madb@gmail.com"
+                                    class="st-single-contact-info-text">Snake33madb@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="st-single-contact-info">
+                            <div class="st-single-contact-info-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="st-single-contact-info-body">
+                                <h4 class="st-single-contact-info-title">Teléfono</h4>
+                                <span class="st-single-contact-info-text">+34 678 14 69 56</span>
+                            </div>
+                        </div>
+                        <div class="st-single-contact-info">
+                            <div class="st-single-contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="st-single-contact-info-body">
+                                <h4 class="st-single-contact-info-title">Ubicación</h4>
+                                <span class="st-single-contact-info-text">Pontevedra, Galicia, España</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Formulario Visual (Requiere backend para funcionar) -->
+                    <form class="st-contact-form" action="#" method="POST">
+                        <div class="st-form-field">
+                            <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
+                        </div>
+                        <div class="st-form-field">
+                            <input type="text" id="email" name="email" placeholder="Tu Email" required>
+                        </div>
+                        <div class="st-form-field">
+                            <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+                        </div>
+                        <div class="st-form-field">
+                            <textarea id="msg" name="msg" placeholder="Mensaje" cols="30" rows="10" required></textarea>
+                        </div>
+                        <button class="st-btn st-style1 st-color1" type="submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="st-height-b100 st-height-lg-b80"></div>
+    </section>
+
+    <!-- Start Footer Seciton -->
     <footer>
-        <p>&copy; 2025 Tu Nombre. Creado aprendiendo con IA.</p>
-        <div class="socials">
-            <a href="#"><i class='bx bxl-github'></i></a>
-            <a href="#"><i class='bx bxl-linkedin'></i></a>
-            <a href="#"><i class='bx bxl-twitter'></i></a>
+        <div class="container">
+            <div class="st-copyright-wrap text-center">
+                <div class="st-copyright-text">© 2025 Marco Daza. WebMaster & WordPress Developer.</div>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/jquery.slick.min.js"></script>
+    <script src="assets/js/lightgallery.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
