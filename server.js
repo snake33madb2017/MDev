@@ -1,67 +1,63 @@
+/*
+ * @author MDev - snake33madb
+ * @copyright 2025 MDev
+ * @license Todos los derechos reservados
+ */
+
 const express = require('express');
 const bodyParser = require('body-parser');
-const fs = require('fs');
 const path = require('path');
 const session = require('express-session');
+const db = require('./src/database'); // Importar módulo de base de datos
 
 const app = express();
-const PORT = 3000;
-const DATA_FILE = path.join(__dirname, 'data.json');
 
-// Middleware
+// IMPORTANTE PARA CPANEL: Usar el puerto que asigne el entorno o 3000 por defecto
+const PORT = process.env.PORT || 3000;
+
+// Middleware y Configuración
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Request Logging
+// Registro de Solicitudes (Logging)
 app.use((req, res, next) => {
     console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
     next();
 });
 
+// Archivos Estáticos
 app.use(express.static(path.join(__dirname, 'public')));
+// Ruta de Assets (Compatibilidad)
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
+// Motor de Vistas
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Session for Admin Auth
+// Sesión para Autenticación de Administrador
 app.use(session({
-    secret: 'marco_secret_key_123',
+    secret: 'marco_secret_key_123', // En producción idealmente usar variable de entorno
     resave: false,
     saveUninitialized: true
 }));
 
-// Helper function to read data
-const readData = () => {
-    try {
-        const data = fs.readFileSync(DATA_FILE, 'utf8');
-        return JSON.parse(data);
-    } catch (err) {
-        console.error("Error reading data:", err);
-        return {};
-    }
-};
+// --- RUTAS ---
 
-// Helper function to write data
-const writeData = (data) => {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 4));
-};
-
-// --- ROUTES ---
-
-// 1. Home Page (Public)
+// 1. Página de Inicio (Pública)
 app.get('/', (req, res) => {
-    const data = readData();
+    const data = db.read();
     res.render('index', { data });
 });
 
-// 2. Admin Login Page
+// 2. Página de Inicio de Sesión (Admin)
 app.get('/login', (req, res) => {
     res.render('login', { error: null });
 });
 
-// 3. Admin Login Logic (Simple Hardcoded Auth)
+// 3. Lógica de Inicio de Sesión
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
-    // CREDENTIALS: admin / admin123
+    // CREDENCIALES: admin / admin123
     if (username === 'admin' && password === 'admin123') {
         req.session.isAuthenticated = true;
         res.redirect('/admin');
@@ -70,70 +66,56 @@ app.post('/login', (req, res) => {
     }
 });
 
-// 4. Admin Dashboard (Protected)
+// 4. Panel de Administración (Protegido)
 app.get('/admin', (req, res) => {
     if (!req.session.isAuthenticated) {
         return res.redirect('/login');
     }
-    const data = readData();
+    const data = db.read();
     res.render('admin', { data });
 });
 
-// 5. Save Changes from Admin
+// 5. Guardar Cambios desde Admin
 app.post('/admin/save', (req, res) => {
     if (!req.session.isAuthenticated) {
-        return res.status(403).send('Unauthorized');
+        return res.status(403).send('No autorizado');
     }
 
     try {
-        const newData = readData();
+        const newData = db.read();
 
-        // 1. Update Hero
+        // 1. Actualizar Hero (Cabecera)
         newData.hero.title = req.body.hero_title || newData.hero.title;
         newData.hero.subtitle = req.body.hero_subtitle || newData.hero.subtitle;
 
-        // 2. Update About
+        // 2. Actualizar Sobre Mí (About)
         newData.about.title = req.body.about_title || newData.about.title;
         newData.about.subtitle = req.body.about_subtitle || newData.about.subtitle;
         newData.about.text = req.body.about_text || newData.about.text;
 
-        // 3. Update Contact
+        // 3. Actualizar Contacto
         if (!newData.contact) newData.contact = {};
         newData.contact.email = req.body.contact_email || newData.contact.email;
         newData.contact.phone = req.body.contact_phone || newData.contact.phone;
         newData.contact.location = req.body.contact_location || newData.contact.location;
         newData.contact.text = req.body.contact_text || newData.contact.text;
 
-        // 4. Update JSON Lists (Helper function to safely parse)
-        const safeJSONParse = (jsonString, fallback) => {
-            try {
-                return jsonString ? JSON.parse(jsonString) : fallback;
-            } catch (e) {
-                console.error("JSON Parse Error:", e);
-                return fallback;
-            }
-        };
+        // 4. Actualizar Listas JSON usando el helper
+        newData.services = db.safeJSONParse(req.body.services_json, newData.services);
+        newData.experience = db.safeJSONParse(req.body.experience_json, newData.experience);
+        newData.skills = db.safeJSONParse(req.body.skills_json, newData.skills);
+        newData.projects = db.safeJSONParse(req.body.projects_json, newData.projects);
+        newData.social = db.safeJSONParse(req.body.social_json, newData.social);
 
-        newData.services = safeJSONParse(req.body.services_json, newData.services);
-        newData.experience = safeJSONParse(req.body.experience_json, newData.experience);
-        newData.skills = safeJSONParse(req.body.skills_json, newData.skills);
-        newData.projects = safeJSONParse(req.body.projects_json, newData.projects);
-        newData.social = safeJSONParse(req.body.social_json, newData.social);
-
-        writeData(newData);
+        db.write(newData);
         res.redirect('/admin');
     } catch (err) {
-        console.error("Save Error:", err);
-        res.status(500).send("Error saving data");
+        console.error("Error al guardar:", err);
+        res.status(500).send("Error guardando datos");
     }
 });
 
-// 6. Assets Route
-// Copy your assets folder to a 'public' folder or stick to root. 
-// For now, let's serve root assets.
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
-
-// Start Server
+// Iniciar Servidor
 app.listen(PORT, () => {
-    console.log(`CMS running at http://localhost:${PORT}`);
+    console.log(`CMS ejecutándose en http://localhost:${PORT}`);
 });

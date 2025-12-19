@@ -1,4 +1,10 @@
-/* --- MARCO DAZA CUSTOM THEME: TERMINAL MODE (GRIS VS CODE) --- */
+/*
+ * @author MDev - snake33madb
+ * @copyright 2025 MDev
+ * @license Todos los derechos reservados
+ */
+
+/* --- TEMA PERSONALIZADO: MODO TERMINAL (GRIS VS CODE) --- */
 
 /* 1. TIPOGRAFÍA GLOBAL */
 body,
@@ -428,7 +434,7 @@ img:hover {
 
 /* Sobrescribimos las clases de altura para reducir espacios vacíos */
 
-/* Desktop Spacing (min-width: 992px) */
+/* Espaciado en Escritorio (min-width: 992px) */
 @media screen and (min-width: 992px) {
     .st-height-b100 {
         height: 40px !important;
@@ -462,7 +468,7 @@ img:hover {
     /* Un poco más aquí para que no pegue al header */
 }
 
-/* Mobile Spacing (max-width: 991px) */
+/* Espaciado en Móvil (max-width: 991px) */
 @media screen and (max-width: 991px) {
     .st-height-lg-b80 {
         height: 32px !important;
