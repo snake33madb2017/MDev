@@ -26,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Icono Favicon -->
-    <link rel="icon" href="assets/img/favicon.png" />
+    <link rel="icon" href="/assets/img/favicon.png" />
 
     <!-- Hojas de Estilo Unificadas (Optimización) -->
     <!--
@@ -98,6 +98,7 @@
                                 <li><a href="#services" class="st-smooth-move">Servicios</a></li>
                                 <li><a href="#resume" class="st-smooth-move">Trayectoria</a></li>
                                 <li><a href="#portfolio" class="st-smooth-move">Proyectos</a></li>
+                                <li><a href="#blog" class="st-smooth-move">Blog</a></li>
                                 <li><a href="#contact" class="st-smooth-move">Contacto</a></li>
                             </ul>
                             <div class="sp-phone">
@@ -154,7 +155,7 @@
         <!-- Imagen Hero -->
         <div class="st-hero-img st-to-right">
             <img class="wow fadeInRight"
-                src="assets/img/section/Marco_Antonio_Daza_desarrollador_web_españa_galicia_pontevedra.webp"
+                src="/assets/img/section/Marco_Antonio_Daza_desarrollador_web_españa_galicia_pontevedra.webp"
                 alt="Marco Daza">
             <div class="st-social-group d-none d-lg-block wow fadeInLeft">
                 <div class="st-social-link">
@@ -187,8 +188,8 @@
             <div class="row">
                 <div class="col-lg-6 wow fadeInLeft">
                     <div class="st-about-img-wrap">
-                        <div class="st-about-img st-dynamic-bg st-bg"
-                            data-src="assets/img/section/Marco_Antonio_Daza_perfil_pontevedra.webp"></div>
+                        <div class="st-about-img st-dynamic-bg st-bg" style="min-height: 550px;"
+                            data-src="/assets/img/section/Marco_Antonio_Daza_perfil_pontevedra.webp"></div>
                     </div>
                     <div class="st-height-b0 st-height-lg-b30"></div>
                 </div>
@@ -439,6 +440,55 @@
         </div>
         <div class="st-height-b100 st-height-lg-b80"></div>
     </section>
+
+    </section>
+
+    <!-- Comienzo Sección Blog -->
+    <section id="blog">
+        <div class="st-height-b100 st-height-lg-b80"></div>
+        <div class="container">
+            <div class="st-section-heading st-style1">
+                <span class="st-section-heading-title h4">NOTICIAS</span>
+                <h2 class="st-section-heading-subtitle" aria-hidden="true">BLOG</h2>
+            </div>
+            <div class="st-height-b25 st-height-lg-b25"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <% if (data.blog && data.blog.length> 0) { %>
+                    <% data.blog.forEach(function(post) { %>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="st-post-single st-style1">
+                                <a href="<%= post.link %>" class="st-post-thumb st-zoom">
+                                    <img src="<%= post.image %>" alt="<%= post.title %>" class="st-zoom-in">
+                                </a>
+                                <div class="st-post-info">
+                                    <div class="st-post-date">
+                                        <%= post.date %>
+                                    </div>
+                                    <h2 class="st-post-title"><a href="<%= post.link %>">
+                                            <%= post.title %>
+                                        </a></h2>
+                                    <div class="st-post-text">
+                                        <%= post.excerpt %>
+                                    </div>
+                                    <a href="<%= post.link %>" class="st-read-more">Leer Más <i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="st-height-b30 st-height-lg-b30"></div>
+                        </div>
+                        <% }); %>
+                            <% } else { %>
+                                <div class="col-12 text-center">
+                                    <p>Próximamente nuevas publicaciones.</p>
+                                </div>
+                                <% } %>
+            </div>
+        </div>
+        <div class="st-height-b100 st-height-lg-b80"></div>
+    </section>
+    <!-- Fin Sección Blog -->
 
     <!-- Comienzo Sección Contacto -->
     <section id="contact" class="st-dark-bg">

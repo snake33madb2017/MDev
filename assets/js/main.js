@@ -40,7 +40,7 @@
     preloaderSetup();
   });
 
-  $(document).on("ready", function () {
+  $(function () {
     $(window).trigger("resize");
     dynamicBackground();
     formValidation();
@@ -273,7 +273,7 @@
 
   /*--------------------------------------------------------------
     10. Slick Slider
-  --------------------------------------------------------------*/ 
+  --------------------------------------------------------------*/
   function slickInit() {
     $('.st-slider').each(function () {
       // Slick Variable
@@ -358,7 +358,7 @@
   }
   /*--------------------------------------------------------------
     11. particles
-  --------------------------------------------------------------*/ 
+  --------------------------------------------------------------*/
   function particles() {
     if ($.exists('#particles-js')) {
       particlesJS("particles-js", {
@@ -492,7 +492,7 @@
     13. Parallax Effect
   --------------------------------------------------------------*/
   function parallaxEffect() {
-    $('.st-parallax').each(function() {
+    $('.st-parallax').each(function () {
       var windowScroll = $(document).scrollTop(),
         windowHeight = $(window).height(),
         barOffset = $(this).offset().top,

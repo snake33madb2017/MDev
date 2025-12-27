@@ -1,0 +1,255 @@
+<!--
+ * @author MDev - snake33madb
+ * @copyright 2025 MDev
+ * @license Todos los derechos reservados
+ -->
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+
+<head>
+    <!-- Meta Etiquetas SEO -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Marco Daza Bautista">
+    <meta name="description" content="<%= post.excerpt %>">
+
+    <!-- Título de Página -->
+    <title>
+        <%= post.title %> | MDev Blog
+    </title>
+
+    <!-- Google Fonts: IBM Plex Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icono Favicon -->
+    <link rel="icon" href="/assets/img/favicon.png" />
+
+    <!-- Estilos Unificados -->
+    <link rel="stylesheet" href="/assets/css/bundle.css?v=1.1" />
+
+    <style>
+        /* Estilos específicos para la vista de post */
+        /* Estilos específicos para la vista de post */
+        .st-post-hero {
+            position: relative;
+            padding: 220px 0 100px !important;
+            /* FORZADO para vencer al reset global de section */
+            background: #111;
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .st-post-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            /* Oscuro para contraste */
+        }
+
+        .st-post-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .st-post-date-badge {
+            display: inline-block;
+            background: #4ec9b0 !important;
+            /* FORZADO */
+            color: #000 !important;
+            font-weight: 700;
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .st-post-single-title {
+            color: #4ec9b0 !important;
+            /* FORZADO Verde Logo */
+            font-size: 3.5rem;
+            /* Más grande */
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(78, 201, 176, 0.4);
+            line-height: 1.2;
+        }
+
+        .st-post-content-wrap {
+            background: transparent;
+            padding: 60px 0;
+        }
+
+        .st-post-body {
+            font-size: 1.3rem !important;
+            /* Texto grande y legible */
+            line-height: 1.8;
+            color: #e0e0e0 !important;
+            /* Texto claro FORZADO */
+            font-weight: 400;
+        }
+
+        .st-post-body strong {
+            color: #ffffff !important;
+            font-weight: 700;
+        }
+
+        .st-post-body h1,
+        .st-post-body h2,
+        .st-post-body h3,
+        .st-post-body h4 {
+            margin-top: 50px;
+            margin-bottom: 25px;
+            color: #4ec9b0 !important;
+            /* Títulos internos FORZADO */
+            font-weight: 700;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .st-post-body ul,
+        .st-post-body ol {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 3px solid #4ec9b0;
+            margin-left: 10px;
+        }
+
+        .st-post-body li {
+            margin-bottom: 15px;
+        }
+
+        .st-back-btn {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 60px;
+            color: #4ec9b0 !important;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #4ec9b0 !important;
+            padding: 12px 30px;
+            border-radius: 5px;
+            background: transparent;
+        }
+
+        .st-back-btn:hover {
+            background: #4ec9b0 !important;
+            color: #000 !important;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(78, 201, 176, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabecera Simplificada -->
+    <header class="st-site-header st-style1 st-sticky-header">
+        <div class="st-main-header">
+            <div class="container">
+                <div class="st-main-header-in">
+                    <div class="st-main-header-left">
+                        <a class="st-site-branding st-logo-custom" href="/">
+                            <i class="fas fa-code logo-icon"></i> MDev<span class="logo-dot">.</span>
+                        </a>
+                    </div>
+                    <div class="st-main-header-right">
+                        <div class="st-nav">
+                            <ul class="st-nav-list st-onepage-nav">
+                                <li><a href="/" class="st-smooth-move">Volver al Inicio</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero del Artículo -->
+    <section class="st-post-hero" style="background-image: url('<%= post.image %>');">
+        <div class="container">
+            <div class="st-post-hero-content">
+                <div class="st-post-date-badge">
+                    <%= post.date %>
+                </div>
+                <h1 class="st-post-single-title">
+                    <%= post.title %>
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido del Artículo -->
+    <div class="st-post-content-wrap">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="st-post-body">
+                        <!-- Renderizar HTML seguro -->
+                        <%- post.content %>
+                    </div>
+
+                    <!-- Footer del Artículo: Navegación y Compartir -->
+                    <div class="st-post-footer"
+                        style="width: 100%; margin-top: 60px; padding-top: 30px; border-top: 1px solid #333; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+
+                        <!-- Botón Volver (Izquierda) -->
+                        <a href="/#blog" class="st-back-btn" style="margin-top: 0 !important; order: 1;">
+                            <i class="fas fa-arrow-left"></i> Volver a Noticias
+                        </a>
+
+                        <!-- Contenedor Redes Sociales (Derecha) -->
+                        <div class="st-share-box" style="order: 2; display: flex; align-items: center; gap: 15px;">
+                            <span
+                                style="color: #666; font-family: 'IBM Plex Mono'; font-size: 0.85rem; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Compartir:</span>
+
+                            <!-- Caja "Pill" personalizada -->
+                            <div
+                                style="background-color: #252526; border-radius: 50px; padding: 8px 20px; display: flex; align-items: center; gap: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+
+                                <!-- LinkedIn -->
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mdev-portfolio.onrender.com/blog/<%= post.id %>"
+                                    target="_blank" aria-label="Compartir en LinkedIn"
+                                    style="color: #dcdcaa; font-size: 1.2rem; transition: transform 0.2s;">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+
+                                <!-- Facebook -->
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://mdev-portfolio.onrender.com/blog/<%= post.id %>"
+                                    target="_blank" aria-label="Compartir en Facebook"
+                                    style="color: #dcdcaa; font-size: 1.2rem; transition: transform 0.2s;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="container">
+            <div class="st-copyright-wrap text-center" style="padding: 30px 0; color: #888;">
+                <div class="st-copyright-text">© 2025 Marco Daza.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

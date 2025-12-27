@@ -2,51 +2,53 @@
 
 **Fecha del análisis:** 27/12/2025
 **Tecnología:** Node.js, Express, EJS (SSR), JSON Database.
-**Tipo de sitio:** Single Page Portfolio
+**Tipo de sitio:** Single Page Portfolio + Blog Dinámico
 
 ---
 
-## 1. SEO (Posicionamiento en Buscadores)
+## 1. Novedades: Sección Blog (Implementada) ✅
+Se ha completado la integración de un sistema de blog funcional y dinámico.
+
+### 🚀 Funcionalidades Agregadas
+*   **Rutas Dinámicas:** Implementación de rutas SEO-friendly (`/blog/:id`) para cada artículo.
+*   **Vista de Lectura:** Nueva plantilla `post.ejs` diseñada con enfoque en la legibilidad y marca personal.
+    *   *Estilo:* Sticky header corregido, tipografía IBM Plex Mono optimizada, y paleta de colores coherente con la marca (Verde `#4ec9b0`).
+*   **Gestión de Datos:** Base de datos `data.json` actualizada para soportar contenido HTML completo y slugs únicos.
+*   **Navegación:** Enlaces "Leer Más" funcionales desde la Home.
+
+---
+
+## 2. SEO (Posicionamiento en Buscadores)
 **Estado Actual: Excelente ✅**
 
 ### ✅ Puntos Fuertes
-*   **Contenenido Actualizado:** El perfil refleja experticia en CMS y Maquetación, atrayendo tráfico cualificado.
-*   **Meta Tags:** Optimizados con palabras clave técnicas y de negocio.
-*   **Social & Rich Snippets:** Open Graph y JSON-LD implementados. Tu web destaca al compartirse.
-*   **Rastreo:** `robots.txt` y `sitemap.xml` configurados correctamente.
-*   **Jerarquía HTML:** Correcta (`h1` único).
+*   **Contenenido Actualizado:** El perfil refleja experticia en CMS y Maquetación.
+*   **Meta Tags:** Optimizados con palabras clave técnicas.
+*   **Rastreo:** `robots.txt` y `sitemap.xml` configurados.
+*   **Estructura Semántica:** Uso correcto de etiquetas HTML5 (`header`, `section`, `article`, `footer`).
 
 ---
 
-## 2. Accesibilidad & UX
+## 3. Accesibilidad & UX
 **Estado Actual: Optimizado ✅**
 
-### ✅ Mejoras Recientes (Accesibilidad)
-*   **Jerarquía de Encabezados:** Se corrigió el orden semántico (de `h4` a `span`) en los títulos de sección para facilitar la navegación con lectores de pantalla.
-*   **Enlaces Accesibles:** Se añadieron atributos `aria-label` descriptivos a los botones de redes sociales.
-*   **Contraste Mejorado:** Se oscurecieron los textos del pie de página y placeholders, y se ajustó el contraste del menú móvil para cumplir estrictamente con WCAG AA.
-*   **Elementos Decorativos:** Se ocultaron textos duplicados ("Ghost Titles") de los lectores de pantalla (`aria-hidden`).
+### ✅ Mejoras Recientes
+*   **Contraste Alto:** Nuevo diseño "Dark Mode" estilo terminal con textos claros (`#d4d4d4`) sobre fondo oscuro (`#111`), garantizando máxima legibilidad.
+*   **Jerarquía Visual:** Títulos en verde corporativo (`#4ec9b0`) para guiar la lectura.
+*   **Interactividad:** Botones y enlaces con estados `hover` claros.
 
 ---
 
-## 3. Seguridad y Rendimiento
-**Estado Actual: Seguro ✅ con Alerta de Rendimiento ⚠️**
+## 4. Seguridad y Rendimiento
+**Estado Actual: Estable y Rápido ⚡**
 
-### ✅ Corregido
-*   **Seguridad:** jQuery actualizado a la versión **3.7.1**.
-*   **CSS Unificado:** Se han combinado todos los archivos CSS en `bundle.css` para reducir peticiones HTTP (de 7 a 1).
-
-### ✅ Corregido (Optimización de Imágenes)
-*   **Imágenes Optimizadas:** Se han convertido y redimensionado las imágenes críticas a formato WebP:
-    *   `marco10.png` ➔ `Marco_Antonio_Daza_desarrollador_web_españa_galicia_pontevedra.webp` (Optimizado).
-    *   `Marco_saliendo_a_ imaginar.jpg` ➔ `Marco_Antonio_Daza_maqueteador_web_españa_galicia_pontevedra.webp` (Optimizado y renombrado).
-    *   `marco3.JPG` ➔ `Marco_Antonio_Daza_maqueteador_web_españa_galicia_pontevedra_madrid_barcelona.webp` (Optimizado y renombrado).
+### ✅ Optimizaciones
+*   **Assets Unificados:** Uso de `bundle.css` para carga rápida.
+*   **Imágenes WebP:** Todo el catálogo de imágenes servido en formato de próxima generación.
+*   **Stack Ligero:** Backend en Node.js sin dependencias pesadas innecesarias.
 
 ---
 
-## 4. Conclusión
-El sitio web **MDev Portfolio** está técnicamente optimizado, incluyendo código, SEO, seguridad y ahora **rendimiento de imágenes**.
-
-### 🌟 Recomendación Final
-1.  **Deploy Final:** Subir los cambios a Render para publicar la versión optimizada.
-2.  **Monitorización:** Revisa Search Console tras el deploy.
+## 5. Próximos Pasos Recomendados
+1.  **Panel Admin:** Completar la interfaz visual para editar los artículos del blog (actualmente se hace vía JSON Editor).
+2.  **Deploy:** Desplegar la última versión con el módulo de blog activo.

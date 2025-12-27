@@ -49,6 +49,20 @@ app.get('/', (req, res) => {
     res.render('index', { data });
 });
 
+// 1.1 Página de Blog Individual
+app.get('/blog/:id', (req, res) => {
+    const data = db.read();
+    const postId = req.params.id;
+    const post = data.blog ? data.blog.find(p => p.id === postId) : null;
+
+    if (post) {
+        res.render('post', { post, data }); // Pasamos 'data' también para el footer/header si es necesario
+    } else {
+        // Si no existe, redirigir al inicio sección blog
+        res.redirect('/#blog');
+    }
+});
+
 // 2. Página de Inicio de Sesión (Admin)
 app.get('/login', (req, res) => {
     res.render('login', { error: null });
@@ -105,6 +119,7 @@ app.post('/admin/save', (req, res) => {
         newData.experience = db.safeJSONParse(req.body.experience_json, newData.experience);
         newData.skills = db.safeJSONParse(req.body.skills_json, newData.skills);
         newData.projects = db.safeJSONParse(req.body.projects_json, newData.projects);
+        newData.blog = db.safeJSONParse(req.body.blog_json, newData.blog);
         newData.social = db.safeJSONParse(req.body.social_json, newData.social);
 
         db.write(newData);
