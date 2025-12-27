@@ -6,21 +6,16 @@ Para hacerlo visible en internet, te recomiendo usar **Render** (tienen un plan 
 
 ## Pasos para Desplegar en Render (Gratis)
 
-1.  Ve a [https://render.com/](https://render.com/) y crea una cuenta (puedes hacer login con tu GitHub).
-2.  Haz clic en **New +** y selecciona **Web Service**.
-3.  Conecta tu repositorio de GitHub: `snake33madb2017/mi-web-cv`.
-4.  Configura los siguientes datos:
-    *   **Name:** (El nombre que quieras para tu url, ej: `mi-web-cv`)
-    *   **Region:** Frankfurt o la más cercana.
-    *   **Branch:** `main`
-    *   **Root Directory:** (Déjalo vacío)
-    *   **Runtime:** Node
-    *   **Build Command:** `npm install`
-    *   **Start Command:** `node server.js`
-5.  Selecciona el plan **Free**.
-6.  Haz clic en **Create Web Service**.
+## Pasos para Desplegar en Render (Método Fácil - Blueprint)
 
-Render descargará tu código, instalará las dependencias y arrancará el servidor. En unos minutos te darán una URL (ej: `https://mi-web-cv.onrender.com`) donde tu web será visible para todo el mundo.
+1.  Ve a [https://render.com/](https://render.com/) y crea una cuenta.
+2.  Ve a la sección **Blueprints** (arriba) y pulsa **New Blueprint Instance**.
+3.  Conecta tu repositorio `snake33madb2017/mi-web-cv`.
+4.  Render detectará automáticamente el archivo `render.yaml` que he creado y configurará todo por ti.
+5.  Pulsa **Apply**.
+
+¡Y listo! En unos minutos tu web estará online.
+
 
 > **⚠️ IMPORTANTE SOBRE LOS DATOS:**
 > Al usar el plan gratuito de Render (y la mayoría de servicios similares), el sistema de archivos es "efímero".
