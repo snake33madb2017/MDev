@@ -10,7 +10,7 @@ Para hacerlo visible en internet, te recomiendo usar **Render** (tienen un plan 
 
 1.  Ve a [https://render.com/](https://render.com/) y crea una cuenta.
 2.  Ve a la sección **Blueprints** (arriba) y pulsa **New Blueprint Instance**.
-3.  Conecta tu repositorio `snake33madb2017/mi-web-cv`.
+3.  Conecta tu repositorio `snake33madb2017/MDev`.
 4.  Render detectará automáticamente el archivo `render.yaml` que he creado y configurará todo por ti.
 5.  Pulsa **Apply**.
 

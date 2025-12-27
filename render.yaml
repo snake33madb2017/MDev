@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: mi-web-cv
+    name: MDev
     env: node
     plan: free
     buildCommand: npm install

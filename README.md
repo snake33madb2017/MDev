@@ -32,8 +32,8 @@ Este proyecto es un **Portafolio Web Dinámico** construido con **Node.js** y **
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone https://github.com/snake33madb2017/mi-web-cv.git
-    cd mi-web-cv
+    git clone https://github.com/snake33madb2017/MDev.git
+    cd MDev
     ```
 
 2.  **Instalar dependencias:**
