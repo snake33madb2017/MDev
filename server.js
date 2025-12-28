@@ -10,10 +10,36 @@ const path = require('path');
 const session = require('express-session');
 const db = require('./src/database'); // Importar módulo de base de datos
 
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+require('dotenv').config(); // Cargar variables de entorno
+
 const app = express();
 
 // IMPORTANTE PARA CPANEL: Usar el puerto que asigne el entorno o 3000 por defecto
 const PORT = process.env.PORT || 3000;
+
+// --- SEGURIDAD ---
+
+// 1. Cabeceras de Seguridad HTTP (Helmet)
+app.use(helmet({
+    contentSecurityPolicy: false, // Desactivar CSP estricto si rompe scripts inline/externos (ajustar según necesidad)
+}));
+
+// 2. Limitador de Tasa General (DDoS / Brute Force)
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutos
+    max: 100, // Limitar a 100 peticiones por IP por ventana
+    message: 'Demasiadas solicitudes desde esta IP, por favor intenta de nuevo más tarde.'
+});
+app.use(limiter);
+
+// 3. Limitador específico para Login (Fuerza Bruta)
+const loginLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 5, // 5 intentos fallidos max
+    message: 'Demasiados intentos de inicio de sesión. Intenta de nuevo en 15 minutos.'
+});
 
 // Middleware y Configuración
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -34,11 +60,16 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Sesión para Autenticación de Administrador
+// Sesión para Autenticación de Administrador (SECURE)
 app.use(session({
-    secret: 'marco_secret_key_123', // En producción idealmente usar variable de entorno
+    secret: process.env.SESSION_SECRET || 'secret_fallback_dev_only',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        secure: process.env.NODE_ENV === 'production', // Solo true en HTTPS
+        httpOnly: true, // Prevenir XSS
+        maxAge: 1000 * 60 * 60 * 24 // 1 día
+    }
 }));
 
 // --- RUTAS ---
@@ -93,7 +124,7 @@ app.get('/login', (req, res) => {
 });
 
 // 3. Lógica de Inicio de Sesión
-app.post('/login', (req, res) => {
+app.post('/login', loginLimiter, (req, res) => {
     const { username, password } = req.body;
     // CREDENCIALES: admin / admin123
     if (username === 'admin' && password === 'admin123') {
