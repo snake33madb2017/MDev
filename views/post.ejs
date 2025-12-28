@@ -19,6 +19,44 @@
         <%= post.title %> | MDev Blog
     </title>
 
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mdev-portfolio.onrender.com/blog/<%= post.id %>">
+    <meta property="og:title" content="<%= post.title %> | MDev Blog">
+    <meta property="og:description" content="<%= post.excerpt %>">
+    <meta property="og:image" content="https://mdev-portfolio.onrender.com<%= post.image %>">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mdev-portfolio.onrender.com/blog/<%= post.id %>">
+    <meta property="twitter:title" content="<%= post.title %> | MDev Blog">
+    <meta property="twitter:description" content="<%= post.excerpt %>">
+    <meta property="twitter:image" content="https://mdev-portfolio.onrender.com<%= post.image %>">
+
+    <!-- Datos Estructurados JSON-LD (Article) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "<%= post.title %>",
+      "image": "https://mdev-portfolio.onrender.com<%= post.image %>",
+      "author": {
+        "@type": "Person",
+        "name": "Marco Daza"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MDev Portfolio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mdev-portfolio.onrender.com/assets/img/favicon.png"
+        }
+      },
+      "datePublished": "<%= post.date %>", 
+      "description": "<%= post.excerpt %>"
+    }
+    </script>
+
     <!-- Google Fonts: IBM Plex Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

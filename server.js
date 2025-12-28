@@ -231,6 +231,41 @@ app.post('/api/track-share', (req, res) => {
     }
 });
 
+// 6. Sitemap Dinámico (SEO)
+app.get('/sitemap.xml', (req, res) => {
+    const data = db.read();
+    const domain = 'https://mdev-portfolio.onrender.com'; // Dominio principal
+
+    let xml = '<?xml version="1.0" encoding="UTF-8"?>';
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+
+    // 1. Página de Inicio
+    xml += `
+    <url>
+        <loc>${domain}/</loc>
+        <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+        <priority>1.0</priority>
+    </url>`;
+
+    // 2. Entradas de Blog Dinámicas
+    if (data.blog && data.blog.length > 0) {
+        data.blog.forEach(post => {
+            // Asumimos que la fecha está en texto legible y tratamos de parsearla, o usamos la actual si falla
+            // Idealmente 'post.date' debería ser ISO en JSON, pero usamos la actual para asegurar validez
+            xml += `
+    <url>
+        <loc>${domain}/blog/${post.id}</loc>
+        <priority>0.8</priority>
+    </url>`;
+        });
+    }
+
+    xml += '</urlset>';
+
+    res.header('Content-Type', 'application/xml');
+    res.send(xml);
+});
+
 // Iniciar Servidor
 app.listen(PORT, () => {
     console.log(`CMS ejecutándose en http://localhost:${PORT}`);
